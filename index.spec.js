@@ -20,5 +20,9 @@ describe("String Calculator: add function", () => {
   test("handles new line as a delimiter along with commas", () => {
     expect(add("1\n2,3")).toBe(6);
   });
-  
+
+  test("supports custom delimiters defined in the first line", () => {
+    expect(add("//;\n1;2")).toBe(3);
+  });
+    
 });

@@ -1,4 +1,7 @@
 export function add(numbers) {
   if (numbers === "") return 0;
-  return Number(numbers);
+  
+  const parts = numbers.split(",");
+  const sum = parts.reduce((acc, val) => acc + Number(val), 0);
+  return sum;
 }

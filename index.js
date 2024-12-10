@@ -13,5 +13,11 @@ export function add(numbers) {
 
   const regex = new RegExp(delimiter);
   const numberArr = sequence.split(regex).map(Number);
+
+  const negatives = numberArr.filter(n => n < 0);
+  if (negatives.length > 0) {
+    throw new Error("negative numbers not allowed " + negatives.join(", "));
+  }
+
   return numberArr.reduce((acc, val) => acc + val, 0);
 }
